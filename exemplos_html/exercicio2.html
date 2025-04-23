@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sofrimento Eterno</title>
+    <title>Mudando Imagem</title>
 </head>
 <body>
-    <h1>meu Deus do céu</h1>
-    <script type="text/javascript">
-        var nome = window.prompt("Digite o seu nome criatura nefasta:");
-        document.write(nome)
+    <h1 id="aviso" style="text-align: center;">NÃO!!! Não passe o mouse por cima do Omniman!</h1>
+    <div style="text-align: center;">
+    <img onmouseover="omnimannadadboa(this)" onmouseout="omnimandboa(this)" width="200px" src="omnimannormal.webp" alt="">
+</div>
+    <script>
+        function omnimandboa(sla){
+            sla.src = "omnimannormal.webp"
+            sla.style.width="200px"
+        }
+
+        function omnimannadadboa(sla){
+            sla.src = "omniman.jpg"
+            sla.style.width = "400px"
+            document.getElementById("aviso").innerText = "NÃO!!!!! Agora já é tarde....."
+        }
+
     </script>
 </body>
 </html>

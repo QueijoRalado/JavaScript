@@ -1,15 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sofrimento Eterno</title>
+    <title>Mudança de Horários</title>
 </head>
 <body>
-    <h1>meu Deus do céu</h1>
-    <script type="text/javascript">
-        var nome = window.prompt("Digite o seu nome criatura nefasta:");
-        document.write(`morra e desista dos seus sonhos, ${nome}!`)
+    <div id="relogio" style="font-size: 125px; text-align: center;"></div>
+    <div id="mensagem" style="font-size: 40px; text-align: center;"></div>
+    <div id="autor" style="font-size: 30px; text-align: center;"></div>
+
+    <script>
+        function atualizar_relogio(){
+            let agora = new Date();
+            let horas = agora.getHours();
+            let minutos = agora.getMinutes().toString().padStart(2, '0');
+            let segundos = agora.getSeconds().toString().padStart(2, '0')
+            let relogio = document.getElementById("relogio");
+
+            document.getElementById("relogio").innerText = horas + ":" + minutos + ":" + segundos;
+            if (horas >= 6 && horas < 12) {
+                document.body.style.backgroundColor = "#87CEFA"; // manhã
+                document.getElementById("mensagem").innerText = "Não espere para ser ótimo. Se você deseja que sua vida melhore, precisa melhorar a si mesmo primeiro."
+                document.getElementById("autor").innerText = "- Hal Elrod"
+                autor.style.color = "#00BFFF"
+                mensagem.style.color = "#4169E1"
+                relogio.style.color = "#1E90FF"
+
+            } else if (horas >= 12 && horas < 18) {
+                document.body.style.backgroundColor = "#D2691E"; // tarde
+                document.getElementById("mensagem").innerText = "A vida está problemática? Pause a rotina, feche os olhos e respire fundo, isso resolverá todos os seus problemas! (exceto afogamento)"
+                document.getElementById("autor").innerText = "- Eu mesmo"
+                autor.style.color = "#D2B48C"
+                mensagem.style.color = "#FFDEAD"
+                relogio.style.color = "#FFA500"
+
+            } else if (horas>=18){
+                document.body.style.backgroundColor = "#191970"; // noite
+                document.getElementById("mensagem").innerText = "Ainda que haja noite no coração, vale a pena sorrir para que haja estrelas na escuridão."
+                document.getElementById("autor").innerText = "- Arnaldo Alvaro Padovani"
+                autor.style.color = "#4169E1"
+                mensagem.style.color = "#6A5ACD"
+                relogio.style.color = "#483D8B"
+
+            } else if (horas>=0 && horas<6) {
+                document.body.style.backgroundColor = "#1C1C1C"; // madrugada
+                document.getElementById("mensagem").innerText = "Deus ajuda quem cedo madruga."
+                document.getElementById("autor").innerText = "- Seu Barriga"
+                autor.style.color = "#000000"
+                mensagem.style.color = "#808080"
+                relogio.style.color = "#4F4F4F"
+        }
+    }
+    atualizar_relogio();
+    setInterval(atualizar_relogio, 1000);
     </script>
 </body>
 </html>
