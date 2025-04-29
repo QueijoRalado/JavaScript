@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h2>ÍNICIO</h2>
+    <input type="number" id="comeco" placeholder="Digite onde começa">
+
+    <h2>FIM</h2>
+    <input type="number" id="final" placeholder="Digite onde termina">
+
+    <h2>NÚMERO ESCOLHIDO</h2>
+    <input type="number" id="numero" placeholder="Digite o número">
+
+    <br>
+    <br>
+    <br>
+
+    <button onclick="colocar_coisa_no_coiso()">fazer o coiso</button>
+
+    <ul id="taubuada">
+    </ul>
+    <script>
+        function colocar_coisa_no_coiso(){
+            let id_ul = document.getElementById("taubuada")
+            //let inicio = document.getElementById("comeco")
+            //let finn = document.getElementById("final") 
+            let numer0 = document.getElementById("numero")
+
+            while (id_ul.hasChildNodes()) {
+                id_ul.removeChild(id_ul.firstChild);
+            }
+            
+            for (var i = 1; i<=10; i++){
+                var soma = Number(i)*Number(numer0.value)
+                var total = `${soma} - ${i}x${numer0.value}`
+                let tag_li = document.createElement('li')
+                tag_li.innerText = total;
+                id_ul.appendChild(tag_li);
+            }
+    }
+    </script>
+    
+</body>
+</html>
