@@ -26,16 +26,17 @@
     <script>
         function colocar_coisa_no_coiso(){
             let id_ul = document.getElementById("taubuada")
-            //let inicio = document.getElementById("comeco")
-            //let finn = document.getElementById("final") 
+            let inicio = document.getElementById("comeco")
+            let finn = document.getElementById("final") 
             let numer0 = document.getElementById("numero")
 
             while (id_ul.hasChildNodes()) {
                 id_ul.removeChild(id_ul.firstChild);
             }
+            if (Number(inicio))
             
-            for (var i = 1; i<=10; i++){
-                var soma = Number(i)*Number(numer0.value)
+            for (Number(inicio); Number(inicio)<=Number(finn); Number(inicio)++){
+                var soma = Number(inicio)*Number(numer0.value)
                 var total = `${soma} - ${i}x${numer0.value}`
                 let tag_li = document.createElement('li')
                 tag_li.innerText = total;
