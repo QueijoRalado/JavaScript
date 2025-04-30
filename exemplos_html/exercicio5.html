@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Afazeres</title>
+</head>
+<body>
+    <h2>ADICIONAR TAREFAS</h2>
+    <input type="text" id="tarefa_a_adicionar" placeholder="Digite a tarefa...">
+    <button onclick="adicionar_tarefas()">bot a tarefa ali :)</button>
+
+    <h2>TAREFAS NÃO FAZIDAS</h2>
+
+    <ol id="tarefas_nao_concluidas">
+    </ol>
+
+    <hr>
+
+    <h2>TAREFAS FAZIDAS</h2>
+
+    <ol id="tarefas_concluidas">
+    </ol>
+
+
+    <script>
+        function adicionar_tarefas(){
+            let tag_li = document.createElement('li')
+            let id_tarefas_nao_concluidas = document.getElementById("tarefas_nao_concluidas")
+            let id_tarefa_a_adicionar = document.getElementById("tarefa_a_adicionar")
+            let tarefa = id_tarefa_a_adicionar.value
+            var IDGerado = Date.now();
+            var horaAtual = new Date(IDGerado);
+
+            tag_li.innerHTML = `<input type='checkbox' id=${IDGerado} onclick="check_box(${IDGerado})">${tarefa}`
+            id_tarefas_nao_concluidas.appendChild(tag_li)
+            tarefa.value = ''
+        }
+
+        function check_box(IDGerado){
+            let tarefa_checada = document.getElementById(`${IDGerado}`)
+            if (tarefa_checada.checked==true){
+                adicionar_tarefas_concluidas(tarefa_checada)
+            }else{
+                retirar_tarefas_concluidas(tarefa_checada)
+            }
+        }
+
+        function adicionar_tarefas_concluidas(tarefa_){
+            let id_tarefas_concluidas = document.getElementById("tarefas_concluidas")
+            tag_li2 = document.createElement('li');   
+            tag_li2.setAttribute("id",`Concluida_${tarefa_.id}` );             
+            tag_li2.innerText = (tarefa_.parentElement).innerText;
+            
+            id_tarefas_concluidas.appendChild(tag_li2)
+        }
+        function retirar_tarefas_concluidas(tarefa_){
+            tarefa_removida = document.getElementById(`Concluida_${tarefa_.id}`);
+            tarefa_removida.remove();
+            tarefa_.parentElement.style.textDecoration="none";
+        }
+    </script>
+</body>
+</html>
