@@ -8,6 +8,9 @@
 <body>
     <h2>ADICIONAR TAREFAS</h2>
     <input type="text" id="tarefa_a_adicionar" placeholder="Digite a tarefa...">
+    <p>Defina a prioridade da sua tarefa (1 - Prioridade Extrema, 2 - Prioridade Mediana, 3 - Prioridade Baixa)</p>
+    <input type="text" id="prioridade_a_adicionar" placeholder="Digite a prioridade da tarefa...">
+
     <button onclick="adicionar_tarefas()">bot a tarefa ali :)</button>
 
     <h2>TAREFAS NÃO FAZIDAS</h2>
@@ -27,10 +30,15 @@
         function adicionar_tarefas(){
             let tag_li = document.createElement('li')
             let id_tarefas_nao_concluidas = document.getElementById("tarefas_nao_concluidas")
+            let id_prioridade_a_adicionar = document.getElementById("prioridade_a_adicionar")
             let id_tarefa_a_adicionar = document.getElementById("tarefa_a_adicionar")
             let tarefa = id_tarefa_a_adicionar.value
             var IDGerado = Date.now();
             var horaAtual = new Date(IDGerado);
+            if (id_prioridade_a_adicionar.value===""){
+                id_prioridade_a_adicionar.value = 3
+            }
+            console.log(id_prioridade_a_adicionar.value)
 
             tag_li.innerHTML = `<input type='checkbox' id=${IDGerado} onclick="check_box(${IDGerado})">${tarefa}`
             id_tarefas_nao_concluidas.appendChild(tag_li)
