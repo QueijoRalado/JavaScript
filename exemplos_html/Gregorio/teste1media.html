@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste com Media Queries</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            background-color: burlywood;
+        }
+        p{
+            color: aliceblue;
+            font-size: 70px;
+        }
+        @media screen and (max-width: 420px) {
+            div {
+                background-color: aquamarine;
+            }
+            p {
+                font-size: 200px;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            Eu gosto muito do rpg do cellbit
+        </p>
+        <picture>
+            <source media="(min-width: 650px)" srcset="omnimannormal.webp">
+            <source media="(min-width: 430px)" srcset="omniman.jpg">
+            <img src="pepe.jpeg" alt="">
+        </picture>
+    </div>
+</body>
+</html>
