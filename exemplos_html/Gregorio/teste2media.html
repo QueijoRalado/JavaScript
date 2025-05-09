@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Grid</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-areas: 
+            "cima cima cima cima cima cima"
+            "esquerda esquerda direita direita direita direita"
+            "cenas cenas descricao descricao descricao descricao"
+            "cenas cenas descricao descricao descricao descricao"
+            "cenas cenas descricao descricao descricao descricao"
+            "baixo baixo baixo baixo2 baixo2 baixo2";
+        }
+        .grid > div {
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+        }
+        .cima {grid-area: cima;}
+        .esquerda {grid-area: esquerda;}
+        .meio {grid-area: meio;}
+        .direita {grid-area: direita;}
+        .baixo {grid-area: baixo;}
+        .baixo2 {grid-area: baixo2;}
+        .cenas {grid-area: cenas;}
+        .descricao {grid-area: descricao;}
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="cima">SESSÃO 0</div>
+        <div class="esquerda">Cenas</div>
+        <div class="direita">Descrição da Cena 1</div>
+        <div class="cenas">Cena 1 <br> Cena 2 <br> Cena 3 <br> Cena 4</div>
+        <div class="descricao"></div>
+        <div class="baixo">Mural</div>
+        <div class="baixo2">Fichas</div>
+    </div>
+</body>
+</html>
