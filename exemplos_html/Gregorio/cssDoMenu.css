@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    text-align: center;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 10px 20px;
+}
+
+header{
+    background-color: bisque;
+}
+
+#caixa {
+    background-color: gray;
+    padding: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  #caixa.ativo {
+    background-color: orange;
+  }
+  

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="cssDoMenu.css" >
+</head>
+<body>
+    <header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="">cu</a></li>
+            <li><a href="">cu</a></li>
+            <li><a href="">cu</a></li>
+        </ul>
+    </nav>
+
+    <div id="caixa">Toque aqui</div>
+
+</header>
+    <script>
+        const caixa = document.getElementById("caixa");
+
+    caixa.addEventListener("touchstart", () => {
+    caixa.classList.toggle("ativo");
+    });
+
+    </script>
+</body>
+</html>

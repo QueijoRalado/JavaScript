@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #caixa {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: transform 0.5s ease;
+    }
+
+    #caixa.animado {
+    transform: translateY(600px);
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div id="caixa"></div>
+<button onclick="animar()">Animar</button>
+
+<script>
+    function animar() {
+  const el = document.getElementById("caixa");
+  el.classList.toggle("animado");
+}
+
+</script>
+</body>
+</html>
